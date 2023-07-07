@@ -1,38 +1,189 @@
-.App {
+body {
+  margin: 0;
+  background-color: black;
+}
+
+h2 {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin: 0;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.current-pages,
+.prev-next-pages {
+  color: aliceblue;
+  margin: 10px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.title__count {
+  font-size: 3em;
+  font-weight: 500;
+}
+
+.count {
+  font-size: 8em;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  color: white;
+}
+
+.pokemon {
+  text-align: center;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  background-color: green;
+  margin: 15px;
+}
+
+.pokemon__catched {
+  text-align: center;
+  width: 175px;
+  height: 175px;
+  border-radius: 50%;
+  background-color: red;
+  margin: 15px;
+}
+
+.pokemon__name {
+  transform: rotate(-5deg);
+  font-size: 1.2em;
+  font-weight: 500;
+  color: white;
+}
+
+.pokemon__image {
+  display: block;
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+}
+
+.side__left {
+  width: 19%;
+  background-color: black;
+}
+
+.side__right {
+  width: 19%;
+  background-color: black;
+}
+
+.general__content {
+  width: 62%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pokemon__button,
+.pokemon__button__abilities {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  background-color: yellow;
+  border: none;
+  opacity: 0.9;
+
+  width: 100px;
+  font-size: 12px;
+  font-weight: 800;
+  border-radius: 5px;
+  z-index: 100;
+}
+
+.pokemon__button__abilities {
+  background: linear-gradient(45deg, rgb(250, 250, 140), rgb(129, 129, 248));
+  background-size: 300% 300%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0 50%;
   }
 }
+
+.pages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons-change-pages {
+  display: flex;
+  justify-content: center;
+  color: pink;
+  font-weight: 700;
+}
+
+.disabled-btn {
+  color: gray;
+  cursor: default;
+  margin: 10px;
+}
+
+.active-btn,
+.show-page {
+  margin: 10px;
+  cursor: default;
+}
+
+.show-page {
+  color: white;
+}
+
+.current-pages {
+  color: wheat;
+}
+
+.prev-next-pages {
+  color: #e10435;
+}
+
+.not-showed-pages {
+  display: none;
+}
+
+.select-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.pokemon-abilities-downloader {
+  /* display: none; */
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pokemon-abilities-downloader-box {
+  /* display: none; */
+  height: 0px;
+}
+
+/* .pokemon-abilities-downloader-none, 
+.pokemon-abilities-downloader-box-none {
+  display: none;
+} */
