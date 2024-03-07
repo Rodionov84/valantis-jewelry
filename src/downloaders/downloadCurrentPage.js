@@ -1,31 +1,33 @@
-export function downloadCurrentPage(page, limit) {
-  //const limit = 12;
+import md5 from "md5";
+import { getPasswordForConnect } from "./getPasswordForConnect";
 
-  const offsetLimit = {
-    offset: (page - 1) * limit,
-    limit,
-  }
+export async function downloadCurrentPage(page) {
 
-  //const urlPokemons = 'https://pokeapi.co/api/v2/pokemon/';
-  const urlPokemons = `https://pokeapi.co/api/v2/pokemon/?offset=${offsetLimit.offset}&limit=${offsetLimit.limit}`;
+  const password = getPasswordForConnect();
+  const urlItems = 'http://api.valantis.store:40000/';
+  const options = {
+    method: 'POST',
+    headers: {
+      'X-Auth': md5(password),
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      "action": "get_ids",
+      "params": { "offset": page * 50, "limit": 60 }
+    }),
+  };
 
-  return fetch(urlPokemons)
+  return fetch(urlItems, options)
     .then(response => {
       return response.json();
     })
     .then(afterResponse => {
-      const results = afterResponse.results;
-      const count = afterResponse.count;
+      const ids = afterResponse.result;
       return {
-        count,
-        results:
-        results.map(result => {
-          return {
-            name: result.name,
-            id: result.url.slice(34, -1),
-          }
-        })
+        ids: ids
       }
+    }).catch(error => {
+      console.error('ОШИБКА!!! downloadCurrentPage Направлен повторный запрос...', page, error)
+      return downloadCurrentPage(page);
     })
-
 }

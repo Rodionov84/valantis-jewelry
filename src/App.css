@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: black;
+  background-color: #f2ecec;
 }
 
 h2 {
@@ -16,63 +16,38 @@ h2 {
   cursor: pointer;
 }
 
-.title__count {
+.title-catalog {
   font-size: 3em;
   font-weight: 500;
+  color: black;
 }
 
-.count {
-  font-size: 8em;
-  font-weight: 500;
+.items-card-in-the-list {
   text-align: center;
-  margin: 0;
-  color: white;
+  width: 200px;
+  height: 355px;
+  border-radius: 10px;
+  background-color: white;
+  margin: 4px;
 }
 
-.pokemon {
-  text-align: center;
-  width: 175px;
-  height: 175px;
-  border-radius: 50%;
-  background-color: green;
-  margin: 15px;
+.items-card-in-the-list:hover {
+  outline: 3px solid silver;
+  border-radius: 10px;
 }
 
-.pokemon__catched {
-  text-align: center;
-  width: 175px;
-  height: 175px;
-  border-radius: 50%;
-  background-color: red;
-  margin: 15px;
+.side-left {
+  width: 13%;
+  background-color: #f2ecec;
 }
 
-.pokemon__name {
-  transform: rotate(-5deg);
-  font-size: 1.2em;
-  font-weight: 500;
-  color: white;
+.side-right {
+  width: 13%;
+  background-color: #f2ecec;
 }
 
-.pokemon__image {
-  display: block;
-  margin: 0 auto;
-  width: 80px;
-  height: 80px;
-}
-
-.side__left {
-  width: 19%;
-  background-color: black;
-}
-
-.side__right {
-  width: 19%;
-  background-color: black;
-}
-
-.general__content {
-  width: 62%;
+.general-content {
+  width: 74%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -85,105 +60,112 @@ h2 {
   flex-wrap: wrap;
 }
 
-.pokemon__button,
-.pokemon__button__abilities {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  background-color: yellow;
-  border: none;
-  opacity: 0.9;
-
-  width: 100px;
-  font-size: 12px;
-  font-weight: 800;
-  border-radius: 5px;
-  z-index: 100;
-}
-
-.pokemon__button__abilities {
-  background: linear-gradient(45deg, rgb(250, 250, 140), rgb(129, 129, 248));
-  background-size: 300% 300%;
-  animation: gradient 5s ease infinite;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0 50%;
-  }
-}
-
-.pages {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
-
 .buttons-change-pages {
   display: flex;
   justify-content: center;
-  color: pink;
   font-weight: 700;
 }
 
 .disabled-btn {
-  color: gray;
+  color: grey;
   cursor: default;
   margin: 10px;
 }
 
-.active-btn,
+.active-btn {
+  margin: 10px;
+  cursor: pointer;
+}
+
 .show-page {
   margin: 10px;
   cursor: default;
 }
 
-.show-page {
-  color: white;
-}
-
-.current-pages {
-  color: wheat;
-}
-
-.prev-next-pages {
-  color: #e10435;
+.active-btn:hover .active-arrow {
+  color: #262626;
+  font-weight: 900;
 }
 
 .not-showed-pages {
   display: none;
 }
 
-.select-form {
+.custom-select {
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: default;
+  margin: 10px;
 }
 
-.pokemon-abilities-downloader {
-  /* display: none; */
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.form-border {
+  margin-top: 10px;
+  border: grey solid 1px;
+  border-radius: 5px;
 }
 
-.pokemon-abilities-downloader-box {
-  /* display: none; */
-  height: 0px;
+.image_wrap {
+  margin: 5px;
+  margin-top: 20px;
 }
 
-/* .pokemon-abilities-downloader-none, 
-.pokemon-abilities-downloader-box-none {
-  display: none;
-} */
+.product-wrap {
+  padding-left: 5px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.product-wrap:hover {
+  text-decoration: underline;
+}
+
+.price-value {
+  color: #a52838;
+  cursor: default;
+}
+
+.brand {
+  cursor: default;
+}
+
+.footer {
+  background-color: #262626;
+  color: white;
+  height: 150px;
+  margin-top: 20px;
+}
+
+.form-select {
+  height: 31px;
+}
+
+.form-imput {
+  height: 25px;
+  width: 360px;
+}
+
+.form-button {
+  height: 31px;
+  cursor: default;
+}
+
+.footer-text {
+  text-align: center;
+}
+
+.footer-text-top {
+  padding-top: 30px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+.footer-text a, .footer-text-top a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}

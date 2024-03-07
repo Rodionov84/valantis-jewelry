@@ -1,24 +1,13 @@
 import { createStore, applyMiddleware } from 'redux';
 import { rootReducer } from './reducers/rootReducer';
-import { downloadCurrentPage } from "./downloaders/downloadCurrentPage";
-import { downloadCountPages } from "./downloaders/downloadCountPages";
-import { changePageOrLimitMiddleware } from './thunk/changePageOrLimitMiddleware';
+import { changePageMiddleware } from './thunk/changePageMiddleware';
 import thunk from 'redux-thunk';
-import { changePageOrLimitThunk } from './reducers/changePageOrLimitThunk';
+import { downloadInitIdsReducer } from './reducers/downloadInitIdsReducer';
+import { downloadItemsReducer } from './reducers/downloadItemsReducer';
 
-const store = createStore(rootReducer, applyMiddleware(changePageOrLimitMiddleware, thunk));
+const store = createStore(rootReducer, applyMiddleware(changePageMiddleware, thunk));
 
-store.dispatch(changePageOrLimitThunk());
-
+    store.dispatch(downloadInitIdsReducer());
+    store.dispatch(downloadItemsReducer());
 
 export { store };
-
-// import { createStore } from 'redux';
-// import { rootReducer } from './rootReducer';
-// import { downloadPokemons } from "./downloadPokemons"
-
-// const store = createStore(rootReducer);
-
-// downloadPokemons().then(pokemons => store.dispatch({ type: 'DOWNLOADED_POKEMONS', downloadedPokemons: pokemons }));
-
-// export { store };

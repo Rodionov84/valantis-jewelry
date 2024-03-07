@@ -1,22 +1,12 @@
 import { combineReducers } from 'redux';
-import { influenceReducer } from './influenceReducer';
-import { viewReducer } from './viewReducer';
 import { pageReducer } from './pageReducer';
-import { countReducer } from './countReducer';
 import { pageNumberReducer } from './pageNumberReducer';
-import { changeLimitReducer } from './changeLimitReducer';
-import { abilitiesReducer } from './abilitiesReducer';
+import { downloaderReducer } from './downloaderReducer';
+import { quantityItemsReducer} from './quantityItemsReducer';
 
 export const rootReducer = combineReducers({
-    viewReducer,
-    influenceReducer,
+    quantityItemsReducer,
     pageReducer,
-    countReducer,
     pageNumberReducer,
-    changeLimitReducer,
-    abilitiesReducer,
+    downloaderReducer,
 })
-
-
-
-// https://redux.js.org/usage/structuring-reducers/using-combinereducers
